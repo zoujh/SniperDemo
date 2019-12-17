@@ -23,7 +23,7 @@ if __name__ == "__main__":
   task.setLogLevel(2)
   
   buf = task.createSvc("BufferMemMgr")
-  buf.property("TimeWindow").set([0.0, 0.0])
+  buf.property("TimeWindow").set([-0.2, 0.3])
   
   isvc = task.createSvc("RootInputSvc/InputSvc")
   isvc.property("InputFile").set( filename )
