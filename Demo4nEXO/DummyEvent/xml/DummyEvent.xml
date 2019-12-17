@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE xdd SYSTEM "xdd.dtd">
+
+<xdd>
+    <package name = "DummyEvent">
+
+        <import name = "Event/EventObject"/>
+
+        <class name = "DummyEvent"
+            author="Zou Jiaheng"
+            desc = "a Dummy event class">
+
+            <base name = "JM::EventObject"/>
+
+        </class>
+    </package>
+</xdd>

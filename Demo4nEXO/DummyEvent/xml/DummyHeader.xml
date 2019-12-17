@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE xdd SYSTEM "xdd.dtd">
+
+<xdd>
+    <package name = "DummyEvent">
+
+        <import name="Event/HeaderObject"/>
+        <import name="Event/DummyEvent"/>
+
+        <class name = "DummyHeader"
+            author="Zou Jiaheng"
+            desc = "Dummy header for test">
+
+            <base name="JM::HeaderObject"/>
+
+            <SmartRelation type = "DEMO::DummyEvent"
+              name="event"
+              desc="Smart pointer to the DummyEvent"
+              nonconstaccessor="TRUE" />
+
+        </class>
+    </package>
+</xdd>

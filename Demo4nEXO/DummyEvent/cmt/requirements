@@ -1,0 +1,25 @@
+package DummyEvent
+
+branches cmt src xml Event
+
+use XmlObjDesc v* -no_auto_imports
+use SniperKernel v*
+use ROOT v* Externals
+use BaseEvent v* DataModel
+use EDMUtil v* DataModel
+
+
+macro_append DummyEvent_cintflags "-I$(CMTINSTALLAREA)/include -I${BASEEVENTROOT}"
+macro_append DummyHeader_cintflags "-I$(CMTINSTALLAREA)/include -I${BASEEVENTROOT} -I${EDMUTILROOT}"
+
+macro_append XODflags " -n DEMO "
+
+apply_pattern xod_headers files=../xml/*.xml
+apply_pattern install_more_includes more=Event
+apply_pattern cint_dictionary files=../Event/*.h
+
+apply_pattern xod_srcs files=../Event/*.h
+
+include_dirs $(DUMMYEVENTROOT)/Event
+library DummyEvent *.cc
+apply_pattern linker_library library=DummyEvent

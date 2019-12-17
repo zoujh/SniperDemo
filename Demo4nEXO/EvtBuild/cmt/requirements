@@ -1,0 +1,14 @@
+package EvtBuild
+
+use SniperKernel   v*
+use ROOT v* Externals
+
+use EvtNavigator v* DataModel
+use BufferMemMgr v* CommonSvc
+use Context v* DataModel
+
+use DummyEvent  v*
+
+library EvtBuild *.cc
+apply_pattern linker_library library = EvtBuild
+apply_pattern install_python_modules
