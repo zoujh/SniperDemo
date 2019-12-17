@@ -1,5 +1,6 @@
 #include "GenEventAlg.h"
 #include "Event/DummyHeader.h"
+#include "Event/DummyEvent.h"
 #include "SniperKernel/AlgFactory.h"
 #include <stdlib.h>
 #include <time.h>
@@ -41,6 +42,9 @@ bool GenEventAlg::execute()
 
   DEMO::DummyHeader* aHeader = new DEMO::DummyHeader();
   aHeader->setEventID(m_count);
+
+  DEMO::DummyEvent* aEvent = new DEMO::DummyEvent();
+  aHeader->setEvent(aEvent);
 
   nav->addHeader("/Event/"+m_hdname, aHeader);
 
